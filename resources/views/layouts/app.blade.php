@@ -40,13 +40,13 @@
                         <li class="nav-item">
                             {{--  <a class="nav-link" href="{{ route('productos.index') }}">{{ __('Productos') }}</a>
                             --}}
-                            <a class="nav-link" href="{{ url('/Productos') }}">{{ __('Productos') }}</a>
+                            <a class="nav-link" href="{{ url('/productos') }}">{{ __('Productos') }}</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ url('/Empleados') }}">{{ __('Empleados') }}</a>
+                            <a class="nav-link" href="{{ url('/empleados') }}">{{ __('Empleados') }}</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ url('/Autores') }}">{{ __('Autores') }}</a>
+                            <a class="nav-link" href="{{ url('/autores') }}">{{ __('Autores') }}</a>
                         </li>
                     </ul>
 

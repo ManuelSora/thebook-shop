@@ -44,7 +44,8 @@
                     <tbody>
                         @foreach ($empleados as $empleado)
                         <tr>
-                            <td>{{ $loop->iteration }}</td>
+                            {{--  <td>{{ $loop->iteration }}</td>  --}}
+                            <td>{{ $empleado->id}}</td>
                             <td>
                                 {{--  <img src="{{ asset('storage').'/'.$empleado->Foto}}" class="img-thumbnail
                                 img-fluid" alt="" width="150"> --}}

@@ -44,12 +44,12 @@
                     <tbody>
                         @foreach ($productos as $producto)
                         <tr>
-                            <td>{{ $loop->iteration }}</td>
+                            {{--  <td>{{ $loop->iteration }}</td>  --}}
+                            <td>{{ $producto->id }}</td>
                             <td>
                                 {{--  <img src="{{ asset('storage').'/'.$producto->Portada}}" class="img-thumbnail
                                 img-fluid" alt="" width="150"> --}}
                             </td>
-
                             <td>{{ $producto->Titulo}}</td>
                             <td>{{ $producto->Genero}}</td>
                             <td>{{ $producto->Precio}}</td>

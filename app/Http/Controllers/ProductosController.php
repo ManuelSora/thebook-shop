@@ -4,16 +4,21 @@ namespace App\Http\Controllers;
 
 use App\Productos;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class ProductosController extends Controller
 {
-    /**
+        /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
+        // $datos['productos']=Productos::paginate(5);
+        //El metodo view llama a donde esta views (resources=>views)
+        //productos.index llama a la carpeta productos al archivo index
+        // return view('productos.index', $datos);
         $datos = Productos::paginate(5);
 
         /* Se carga la vista */
@@ -29,7 +34,9 @@ class ProductosController extends Controller
      */
     public function create()
     {
-        //
+        //El metodo view llama a donde esta views (resources=>views)
+        //productos.create llama a la carpeta productos al archivo create
+        return view('productos.create');
     }
 
     /**
@@ -40,7 +47,28 @@ class ProductosController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $campos = [
+            'Titulo' => 'required|string|max:100',
+            'Genero' => 'required|string|max:100',
+            'Precio' => 'required|string|max:100',
+            'Descripcion' => 'required|string|max:100',
+            'Portada' => 'required|max:10000|mimes:jpeg,png,jpg'
+        ];
+        $Mensaje = ["required" => 'El :attribute es requerido'];
+        $this->validate($request, $campos, $Mensaje);
+
+        // $datosProducto=request()->all();
+
+        $datosProducto = request()->except('_token');
+
+        if ($request->hasFile('Portada')) {
+            $datosProducto['Portada'] = $request->file('Portada')->store('uploads', 'public');
+        }
+
+        Productos::insert($datosProducto);
+
+        //return response()->json($datosProducto);
+        return redirect('productos')->with('Mensaje', 'Producto agregado con exito');
     }
 
     /**
@@ -49,9 +77,11 @@ class ProductosController extends Controller
      * @param  \App\Productos  $productos
      * @return \Illuminate\Http\Response
      */
-    public function show(Productos $productos)
+    public function show($id)
     {
-        //
+        $producto = Productos::findOrFail($id);
+
+        return view('productos.show', compact('producto'));
     }
 
     /**
@@ -60,9 +90,10 @@ class ProductosController extends Controller
      * @param  \App\Productos  $productos
      * @return \Illuminate\Http\Response
      */
-    public function edit(Productos $productos)
+    public function edit($id)
     {
-        //
+        $producto = Productos::findOrFail($id);
+        return view('productos.edit', compact('producto'));
     }
 
     /**
@@ -72,9 +103,37 @@ class ProductosController extends Controller
      * @param  \App\Productos  $productos
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Productos $productos)
+    public function update(Request $request, $id)
     {
-        //
+        $campos = [
+            'Titulo' => 'required|string|max:100',
+            'Genero' => 'required|string|max:100',
+            'Precio' => 'required|string|max:100',
+            'Descripcion' => 'required|string|max:100',
+        ];
+
+        if ($request->hasFile('Portada')) {
+            $campos += ['Portada' => 'required|max:10000|mimes:jpeg,png,jpg'];
+        }
+        $Mensaje = ["required" => 'El :attribute es requerido'];
+        $this->validate($request, $campos, $Mensaje);
+
+        $datosProducto = request()->except(['_token', '_method']);
+
+        if ($request->hasFile('Portada')) {
+            $producto = Productos::findOrFail($id);
+
+            Storage::delete('public/' . $producto->Portada);
+
+            $datosProducto['Portada'] = $request->file('Portada')->store('uploads', 'public');
+        }
+
+        Productos::where('id', '=', $id)->update($datosProducto);
+
+        // $producto= Productos::findOrFail($id);
+        // return view('productos.edit', compact('producto'));
+
+        return redirect('productos')->with('Mensaje', 'Producto Modificado con exito');
     }
 
     /**
@@ -83,8 +142,13 @@ class ProductosController extends Controller
      * @param  \App\Productos  $productos
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Productos $productos)
+    public function destroy($id)
     {
-        //
+        $producto = Productos::findOrFail($id);
+
+        if (Storage::delete('public/' . $producto->Portada)) {
+            Productos::destroy($id);
+        }
+        return redirect('productos')->with('Mensaje', 'Producto Eliminado');
     }
 }

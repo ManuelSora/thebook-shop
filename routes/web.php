@@ -21,7 +21,9 @@ Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home');
 
-Route::resource('/Productos', 'ProductosController')->middleware('auth');
-Route::resource('/Empleados', 'EmpleadosController')->middleware('auth');
-Route::resource('/Autores', 'AutoresController')->middleware('auth');
+Route::get('/home', 'HomeController@index')->middleware('auth');
+
+Route::resource('/productos', 'ProductosController')->middleware('auth');
+Route::resource('/empleados', 'EmpleadosController')->middleware('auth');
+Route::resource('/autores', 'AutoresController')->middleware('auth');
 
