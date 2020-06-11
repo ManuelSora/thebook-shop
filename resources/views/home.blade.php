@@ -22,7 +22,7 @@
                     </div>
                     @endif
 
-                    <img src="{{url('/images/libroarte.jpg')}}" alt="Responsive image"
+                    <img src="{{url('/img/libroarte.jpg')}}" alt="Responsive image"
                         class="img-fluid img-thumbnail" />
                 </div>
             </div>
