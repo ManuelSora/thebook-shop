@@ -21,7 +21,7 @@
                 <!-- The slideshow -->
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <img src="{{url('/images/S.D.Perry.jpg')}}" alt="S.D. Perry"
+                        <img src="{{url('/img/S.D.Perry.jpg')}}" alt="S.D. Perry"
                             class="rounded-circle mx-auto d-block" width="500" height="500" />
                         <div class="carousel-caption d-none d-md-block">
                             <h2>S.D. Perry</h2>
@@ -33,7 +33,7 @@
                         </div>
                     </div>
                     <div class="carousel-item">
-                        <img src="{{url('/images/RickRiordan.jpg')}}" alt="Rick Riordan"
+                        <img src="{{url('/img/RickRiordan.jpg')}}" alt="Rick Riordan"
                             class="rounded-circle mx-auto d-block" width="500" height="500" />
                         <div class="carousel-caption d-none d-md-block">
                             <h2>Rick Riordan</h2>
@@ -47,7 +47,7 @@
                         </div>
                     </div>
                     <div class="carousel-item">
-                        <img src="{{url('/images/jk_rowling.jpg')}}" alt="J.K. Rowling"
+                        <img src="{{url('/img/jk_rowling.jpg')}}" alt="J.K. Rowling"
                             class="rounded-circle mx-auto d-block" width="500" height="500" />
                         <div class="carousel-caption d-none d-md-block">
                             <h2>J.K. Rowling</h2>
@@ -88,7 +88,7 @@
 
             <div class="card-deck">
                 <div class="card bg-dark mb-3 border-primary">
-                    <img class="card-img-top" src="{{url('/images/jk_rowling.jpg')}}" alt="Card image cap" height="500">
+                    <img class="card-img-top" src="{{url('/img/jk_rowling.jpg')}}" alt="Card image cap" height="500">
                     <div class="card-body">
                         <h5 class="card-title">J.K. Rowling</h5>
                         <p class="card-text">Es la autora británica de la historia fantástica de Harry Potter,
@@ -98,7 +98,7 @@
 
                 </div>
                 <div class="card bg-dark mb-3 border-primary">
-                    <img class="card-img-top" src="{{url('/images/RickRiordan.jpg')}}" alt="Card image cap"
+                    <img class="card-img-top" src="{{url('/img/RickRiordan.jpg')}}" alt="Card image cap"
                         height="500">
                     <div class="card-body">
                         <h5 class="card-title">Rick Riordan</h5>
@@ -110,7 +110,7 @@
 
                 </div>
                 <div class="card bg-dark mb-3 border-primary">
-                    <img class="card-img-top" src="{{url('/images/S.D.Perry.jpg')}}" alt="Card image cap" height="500">
+                    <img class="card-img-top" src="{{url('/img/S.D.Perry.jpg')}}" alt="Card image cap" height="500">
                     <div class="card-body">
                         <h5 class="card-title">S.D. Perry</h5>
                         <p class="card-text">Es una novelista que reside en Portland, Estados Unidos.
@@ -125,7 +125,7 @@
 
             <div class="card-deck">
                 <div class="card bg-dark mb-3 border-primary">
-                    <img class="card-img-top" src="{{url('/images/JRRTolkien.jpg')}}" alt="Card image cap" height="500">
+                    <img class="card-img-top" src="{{url('/img/JRRTolkien.jpg')}}" alt="Card image cap" height="500">
                     <div class="card-body">
                         <h5 class="card-title">J.R.R. Tolkien</h5>
                         <p class="card-text">John Ronald Reuel Tolkien
@@ -136,7 +136,7 @@
 
                 </div>
                 <div class="card bg-dark mb-3 border-primary">
-                    <img class="card-img-top" src="{{url('/images/StephenKing.jpg')}}" alt="Card image cap"
+                    <img class="card-img-top" src="{{url('/img/StephenKing.jpg')}}" alt="Card image cap"
                         height="500">
                     <div class="card-body">
                         <h5 class="card-title">Stephen King</h5>
@@ -148,7 +148,7 @@
 
                 </div>
                 <div class="card bg-dark mb-3 border-primary">
-                    <img class="card-img-top" src="{{url('/images/LewisCarroll.png')}}" alt="Card image cap"
+                    <img class="card-img-top" src="{{url('/img/LewisCarroll.png')}}" alt="Card image cap"
                         height="500">
                     <div class="card-body">
                         <h5 class="card-title">Lewis Carroll</h5>
