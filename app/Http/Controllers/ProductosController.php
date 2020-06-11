@@ -53,7 +53,7 @@ class ProductosController extends Controller
             'precio' => 'required|string|max:100',
             'descripcion' => 'required|string|max:100',
             'portada' => 'required|max:10000|mimes:jpeg,png,jpg',
-            'autor' => 'required|string|max:100',
+            'autor' => 'required|string|max:100'
 
         ];
         $Mensaje = ["required" => 'El :attribute es requerido'];
