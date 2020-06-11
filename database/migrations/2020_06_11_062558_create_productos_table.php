@@ -19,7 +19,7 @@ class CreateProductosTable extends Migration
             $table->string('genero');
             $table->string('descripcion');
             $table->string('precio');
-            $table->string('portada');
+            $table->string('portada')->nullable();
             $table->string('autor');
             $table->timestamps();
         });

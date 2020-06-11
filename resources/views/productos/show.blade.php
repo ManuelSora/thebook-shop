@@ -7,7 +7,7 @@
     <div class="card text-white bg-dark mb-3 border-primary">
         <div class="card-header h4 border-primary">Libro {{ $producto->Titulo }} {{ "$" }}{{ $producto->Precio }}</div>
         <div class="card-body">
-                    
+
                 <div class="table-responsive">
                     <table class="table table-dark table-hover">
                         <tbody>
@@ -23,23 +23,23 @@
                             </tr>
                             <tr>
                                 <th> Titulo </th>
-                                <td> {{ $producto->Titulo }} </td>
+                                <td> {{ $producto->titulo }} </td>
                             </tr>
                             <tr>
                                 <th> Genero </th>
-                                <td> {{ $producto->Genero }} </td>
+                                <td> {{ $producto->genero }} </td>
                             </tr>
                             <tr>
                                 <th> Precio </th>
-                                <td> {{ $producto->Precio }} </td>
+                                <td> {{ $producto->precio }} </td>
                             </tr>
                             <tr>
                                 <th> Descripcion </th>
-                                <td> {{ $producto->Descripcion }} </td>
+                                <td> {{ $producto->descripcion }} </td>
                             </tr>
                             <tr>
                                 <th> Autor </th>
-                                <td> {{ $producto->Autor }} </td>
+                                <td> {{ $producto->autor }} </td>
                             </tr>
                         </tbody>
                     </table>

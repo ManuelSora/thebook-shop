@@ -13,7 +13,7 @@
             </div>
             @endif
 
-            <a href="{{ url('empleados/create') }}" class="btn btn-success btn-outline-success">Agregar Empleado</a>
+            <a href="{{ url('empleados/create') }}" class="btn btn-outline-success">Agregar Empleado</a>
 
             <form method="GET" action="{{ url('/empleados') }}" accept-charset="UTF-8"
                 class="form-inline my-2 my-lg-0 float-right" role="search">
@@ -21,7 +21,7 @@
                     <input type="text" class="form-control" name="search" placeholder="Buscar..."
                         value="{{ request('search') }}">
                     <span class="input-group-append">
-                        <button class="btn btn-secondary btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
                     </span>
                 </div>
             </form>
@@ -58,16 +58,15 @@
 
                             <td>
 
-                                <a class="btn btn-info btn-outline-info" href="{{ url('/empleados/'.$empleado->id) }}"
-                                    title="View empleado">Ver</a>
+                                <a class="btn btn-outline-info" href="{{ url('/empleados/'.$empleado->id) }}">Ver</a>
 
-                                <a class="btn btn-warning btn-outline-warning"
+                                <a class="btn btn-outline-warning"
                                     href="{{ url('/empleados/'.$empleado->id.'/edit') }}">Editar</a>
                                 <form method="post" action="{{ url('/empleados/'.$empleado->id)}}"
                                     style="display:inline">
                                     {{ csrf_field() }}
                                     {{ method_field('DELETE')}}
-                                    <button class="btn btn-danger btn-outline-danger" type="submit"
+                                    <button class="btn btn-outline-danger" type="submit"
                                         onclick="return confirm('Borrar?');">Borrar</button>
                                 </form>
                             </td>

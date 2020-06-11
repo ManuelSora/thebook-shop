@@ -51,8 +51,8 @@ class ProductosController extends Controller
             'Titulo' => 'required|string|max:100',
             'Genero' => 'required|string|max:100',
             'Precio' => 'required|string|max:100',
-            'Descripcion' => 'required|string|max:100',
-            'Portada' => 'required|max:10000|mimes:jpeg,png,jpg'
+            'Descripcion' => 'required|string|max:100'
+            // 'Portada' => 'required|max:10000|mimes:jpeg,png,jpg'
         ];
         $Mensaje = ["required" => 'El :attribute es requerido'];
         $this->validate($request, $campos, $Mensaje);

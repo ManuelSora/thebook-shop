@@ -52,8 +52,8 @@ class EmpleadosController extends Controller
             'NombreEmpleado' => 'required|string|max:100',
             'ApellidoEmpleado' => 'required|string|max:100',
             'Edad' => 'required|string|max:100',
-            'Correo' => 'required|string|max:100',
-            'Foto' => 'required|max:10000|mimes:jpeg,png,jpg'
+            'Correo' => 'required|string|max:100'
+            // 'Foto' => 'required|max:10000|mimes:jpeg,png,jpg'
         ];
         $Mensaje = ["required" => 'El :attribute es requerido'];
         $this->validate($request, $campos, $Mensaje);
