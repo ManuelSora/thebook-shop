@@ -26,5 +26,5 @@ class Productos extends Model
      * @var array
      */
 
-    protected $fillable = ['titulo', 'genero', 'descripcion', 'precio','portada','autor'];
+    protected $fillable = ['Titulo', 'Genero', 'Descripcion', 'Precio','Portada','Autor'];
 }
