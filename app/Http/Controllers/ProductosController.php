@@ -48,12 +48,12 @@ class ProductosController extends Controller
     public function store(Request $request)
     {
         $campos = [
-            'Titulo' => 'required|string|max:100',
-            'Genero' => 'required|string|max:100',
-            'Precio' => 'required|string|max:100',
-            'Descripcion' => 'required|string|max:100',
-            'Portada' => 'required|max:10000|mimes:jpeg,png,jpg',
-            'Autor' => 'required|string|max:100',
+            'titulo' => 'required|string|max:100',
+            'genero' => 'required|string|max:100',
+            'precio' => 'required|string|max:100',
+            'descripcion' => 'required|string|max:100',
+            'portada' => 'required|max:10000|mimes:jpeg,png,jpg',
+            'autor' => 'required|string|max:100',
 
         ];
         $Mensaje = ["required" => 'El :attribute es requerido'];
@@ -63,8 +63,8 @@ class ProductosController extends Controller
         // dd($request->all());
         $datosProducto = request()->except('_token');
 
-        if ($request->hasFile('Portada')) {
-            $datosProducto['Portada'] = $request->file('Portada')->store('uploads', 'public');
+        if ($request->hasFile('portada')) {
+            $datosProducto['portada'] = $request->file('portada')->store('uploads', 'public');
         }
 
         Productos::insert($datosProducto);
