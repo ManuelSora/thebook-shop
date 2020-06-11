@@ -60,12 +60,12 @@ class ProductosController extends Controller
         $this->validate($request, $campos, $Mensaje);
 
         // $datosProducto=request()->all();
-
+        // dd($request->all());
         $datosProducto = request()->except('_token');
 
-        // if ($request->hasFile('Portada')) {
-        //     $datosProducto['Portada'] = $request->file('Portada')->store('uploads', 'public');
-        // }
+        if ($request->hasFile('Portada')) {
+            $datosProducto['Portada'] = $request->file('Portada')->store('uploads', 'public');
+        }
 
         Productos::insert($datosProducto);
 
