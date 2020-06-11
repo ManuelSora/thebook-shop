@@ -47,7 +47,8 @@
                         <tr>
                             <td>{{ $producto->id }}</td>
                             <td>
-                                <img class="img-fluid img-thumbnail"  width="150" src="{{ asset('storage').'/'.$producto->Portada}}" alt="debe de haber una imagen" srcset="">
+                                <img class="img-fluid img-thumbnail"  width="150" src="{{ asset('storage').'/'.$producto->portada}}" alt="debe de haber una imagen" srcset="">
+                                {{--  <img class="img-fluid img-thumbnail"  width="150" src="{{ asset('storage').'/'.$producto->Portada}}" alt="debe de haber una imagen" srcset="">  --}}
                             </td>
                             <td>{{ $producto->titulo}}</td>
                             <td>{{ $producto->genero}}</td>

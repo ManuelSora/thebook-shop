@@ -47,6 +47,7 @@
                             {{--  <td>{{ $loop->iteration }}</td>  --}}
                             <td>{{ $empleado->id}}</td>
                             <td>
+                                <img class="img-fluid img-thumbnail"  width="150" src="{{ asset('storage').'/'.$empleado->Foto}}" alt="debe de haber una imagen" srcset="">
                                 {{--  <img src="{{ asset('storage').'/'.$empleado->Foto}}" class="img-thumbnail
                                 img-fluid" alt="" width="150"> --}}
                             </td>

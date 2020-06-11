@@ -52,7 +52,9 @@ class ProductosController extends Controller
             'Genero' => 'required|string|max:100',
             'Precio' => 'required|string|max:100',
             'Descripcion' => 'required|string|max:100',
-            'Portada' => 'required|max:10000|mimes:jpeg,png,jpg'
+            'Portada' => 'required|max:10000|mimes:jpeg,png,jpg',
+            'Autor' => 'required|string|max:100',
+
         ];
         $Mensaje = ["required" => 'El :attribute es requerido'];
         $this->validate($request, $campos, $Mensaje);
@@ -61,9 +63,9 @@ class ProductosController extends Controller
 
         $datosProducto = request()->except('_token');
 
-        if ($request->hasFile('Portada')) {
-            $datosProducto['Portada'] = $request->file('Portada')->store('uploads', 'public');
-        }
+        // if ($request->hasFile('Portada')) {
+        //     $datosProducto['Portada'] = $request->file('Portada')->store('uploads', 'public');
+        // }
 
         Productos::insert($datosProducto);
 
