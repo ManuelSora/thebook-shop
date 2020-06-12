@@ -33,5 +33,5 @@
     <input class="form-control {{ $errors->has('Foto')?'is-invalid':'' }}" type="file" name="Foto" id="Foto" value="">
 </div>
 
-<input type="submit" class="btn btn-success btn-outline-success" value="{{ $Modo=='crear' ? 'Agregar':'Modificar' }}">
-<a class="btn btn-primary btn-outline-primary" href="{{ url('empleados') }}">Regresar</a>
+<input type="submit" class="btn btn-outline-success" value="{{ $Modo=='crear' ? 'Agregar':'Modificar' }}">
+<a class="btn btn-outline-primary" href="{{ url('empleados') }}">Regresar</a>
