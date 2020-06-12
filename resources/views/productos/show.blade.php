@@ -45,13 +45,13 @@
                     </table>
                 </div>
 
-                        <a href="{{ url('/productos') }}" title="Back"><button class="btn btn-info btn-sm btn-outline-info"><i class="fa fa-arrow-left" aria-hidden="true"></i> Regresar</button></a>
-                        <a href="{{ url('/productos/' . $producto->id . '/edit') }}" title="Edit producto"><button class="btn btn-warning btn-sm btn-outline-warning"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Editar</button></a>
+                        <a href="{{ url('/productos') }}" title="Back"><button class="btn btn-sm btn-outline-info"><i class="fa fa-arrow-left" aria-hidden="true"></i> Regresar</button></a>
+                        <a href="{{ url('/productos/' . $producto->id . '/edit') }}" title="Edit producto"><button class="btn btn-sm btn-outline-warning"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Editar</button></a>
 
                         <form method="POST" action="{{ url('productos' . '/' . $producto->id) }}" accept-charset="UTF-8" style="display:inline">
                             {{ method_field('DELETE') }}
                             {{ csrf_field() }}
-                            <button type="submit" class="btn btn-danger btn-sm btn-outline-danger" title="Delete producto" onclick="return confirm(&quot;Confirm delete?&quot;)"><i class="fa fa-trash-o" aria-hidden="true"></i> Borrar</button>
+                            <button type="submit" class="btn btn-sm btn-outline-danger" title="Delete producto" onclick="return confirm(&quot;Confirm delete?&quot;)"><i class="fa fa-trash-o" aria-hidden="true"></i> Borrar</button>
                         </form>
                         <br/>
                         <br/>
