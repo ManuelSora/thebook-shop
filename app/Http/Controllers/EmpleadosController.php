@@ -143,13 +143,12 @@ class EmpleadosController extends Controller
      * @param  \App\Empleados  $empleados
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Empleados $empleado)
     {
-        $empleado = Empleados::findOrFail($id);
+        Storage::disk('public')->delete($empleado->image); //Elimina la imagen de la carpeta
 
-        if (Storage::delete('public/' . $empleado->Foto)) {
-            Empleados::destroy($id);
-        }
+        $empleado->delete();
+        
         return redirect('empleados')->with('Mensaje', 'Empleado Eliminado');
     }
 }
