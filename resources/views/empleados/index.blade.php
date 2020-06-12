@@ -63,7 +63,7 @@
 
                                 <a class="btn btn-outline-warning"
                                     href="{{ url('/empleados/'.$empleado->id.'/edit') }}">Editar</a>
-                                <form method="post" action="{{ url('/empleados/'.$empleado->id)}}"
+                                <form method="post" action="{{ url('/empleados/'.$empleado->id) }}"
                                     style="display:inline">
                                     {{ csrf_field() }}
                                     {{ method_field('DELETE')}}

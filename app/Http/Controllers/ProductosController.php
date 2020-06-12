@@ -108,26 +108,26 @@ class ProductosController extends Controller
     public function update(Request $request, $id)
     {
         $campos = [
-            'Titulo' => 'required|string|max:100',
-            'Genero' => 'required|string|max:100',
-            'Precio' => 'required|string|max:100',
-            'Descripcion' => 'required|string|max:100',
+            'titulo' => 'required|string|max:100',
+            'genero' => 'required|string|max:100',
+            'precio' => 'required|string|max:100',
+            'descripcion' => 'required|string|max:100',
         ];
 
-        if ($request->hasFile('Portada')) {
-            $campos += ['Portada' => 'required|max:10000|mimes:jpeg,png,jpg'];
+        if ($request->hasFile('portada')) {
+            $campos += ['portada' => 'required|max:10000|mimes:jpeg,png,jpg'];
         }
         $Mensaje = ["required" => 'El :attribute es requerido'];
         $this->validate($request, $campos, $Mensaje);
 
         $datosProducto = request()->except(['_token', '_method']);
 
-        if ($request->hasFile('Portada')) {
+        if ($request->hasFile('portada')) {
             $producto = Productos::findOrFail($id);
 
             Storage::delete('public/' . $producto->Portada);
 
-            $datosProducto['Portada'] = $request->file('Portada')->store('uploads', 'public');
+            $datosProducto['portada'] = $request->file('portada')->store('uploads', 'public');
         }
 
         Productos::where('id', '=', $id)->update($datosProducto);
@@ -144,13 +144,12 @@ class ProductosController extends Controller
      * @param  \App\Productos  $productos
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Productos $producto)
     {
-        $producto = Productos::findOrFail($id);
+        Storage::disk('public')->delete($producto->image); //Elimina la imagen de la carpeta
 
-        if (Storage::delete('public/' . $producto->Portada)) {
-            Productos::destroy($id);
-        }
+        $producto->delete();
+        
         return redirect('productos')->with('Mensaje', 'Producto Eliminado');
     }
 }
